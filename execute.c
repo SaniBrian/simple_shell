@@ -8,8 +8,6 @@
 *Return: void
 */
 
-extern char **environ;
-
 void execute(char *cp, char **args, char *prog)
 {
 	pid_t pid;
