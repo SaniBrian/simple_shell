@@ -43,6 +43,8 @@ int main(int ac, char **argv)
 		handler(args, argv[0]);
 		ffree(args);
 	}
+	if (env.flag)
+		ffree(environ);
 	ffree(args);
 	return (0);
 }

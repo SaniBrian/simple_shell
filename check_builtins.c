@@ -14,6 +14,8 @@ int check_builtins(char **args, char *prog)
 	Builtins builtins[] = {
 		{"exit", exit_0},
 		{"env", print_env},
+		{"setenv", set_env},
+		{"unsetenv", unset_env},
 		{NULL, NULL}
 	};
 

@@ -70,3 +70,42 @@ int compare_str(char *s1, char *s2)
 
 	return (0);
 }
+
+/**
+*_strcat - concatenates two strings
+*@s1: string 1
+*@s2: string 2
+*Return: pointer to concatenated string
+*/
+
+char *_strcat(char *s1, char *s2)
+{
+	int i = 0, j = 0;
+
+	while (s1[i] != '\0')
+		i++;
+	while (s2[j] != '\0')
+		s1[i++] = s2[j++];
+	s1[i] = '\0';
+	return (s1);
+}
+
+/**
+*_strcpy - copies s2 to s1
+*@s1: string 1
+*@s2: string 2
+*Return: pointer to s1
+*/
+
+char *_strcpy(char *s1, char *s2)
+{
+	int i = 0;
+
+	while (s2[i] != '\0')
+	{
+		s1[i] = s2[i];
+		i++;
+	}
+	s1[i] = '\0';
+	return (s1);
+}
