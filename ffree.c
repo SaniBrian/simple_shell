@@ -10,7 +10,7 @@ void ffree(char **args)
 {
 	int i = 0;
 
-	if (args == NULL)
+	if (!args || args == NULL)
 		return;
 	while (args[i])
 	{

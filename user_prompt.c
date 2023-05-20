@@ -15,5 +15,5 @@ void user_prompt(int *atty)
 	else
 		*atty = 0;
 	if (*atty == 1)
-		write(STDOUT_FILENO, prompt, 2);
+		write(STDERR_FILENO, prompt, 2);
 }

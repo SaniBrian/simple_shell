@@ -17,17 +17,32 @@ int main(int ac, char **argv)
 
 	while (atty)
 	{
+		args = NULL;
+		buffer = NULL;
 		user_prompt(&atty);
 		input_byte = getline(&buffer, &buffer_size, stdin);
 		if (input_byte == -1)
 		{
 			write(STDOUT_FILENO, "\n", 1);
+			free(buffer);
 			break;
 		}
 		buffer[input_byte - 1] = '\0';
-		execute(buffer, args, argv[0]);
+		if (*buffer == '\0')
+		{
+			free(buffer);
+			continue;
+		}
+		args = split_buffer(buffer);
+		free(buffer);
+		if (args == NULL)
+		{
+			perror(argv[0]);
+			exit(EXIT_FAILURE);
+		}
+		execute(args[0], args, argv[0]);
+		ffree(args);
 	}
 	ffree(args);
-	free(buffer);
 	return (0);
 }

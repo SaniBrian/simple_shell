@@ -8,8 +8,12 @@
 #include <sys/wait.h>
 
 /**FUNCTION PROTOTYPES*/
+char *_strtok(char *string, char *dlm);
 void user_prompt(int *atty);
 void execute(char *cp, char **args, char *prog);
 void ffree(char **args);
+char **split_buffer(char *buffer);
+char *_strdup(char *str);
+
 
 #endif
