@@ -1,12 +1,12 @@
 #include "shell.h"
-#include <stdlib.h>
-#include <unistd.h>
+
 /**
 *cd_dir - change directory
 *@args: vectors of args
 *@prog: program name
 *Return: void
 */
+
 void cd_dir(char **args, char *prog)
 {
 	int arg_count = 0, err;
