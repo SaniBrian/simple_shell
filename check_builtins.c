@@ -1,12 +1,12 @@
 #include "shell.h"
 
-
 /**
 *check_builtins - check for builtins
 *@args: arguments
 *@prog: program name
 *Return: 0 if no b_ins found, 1 if otherwise
 */
+
 
 int check_builtins(char **args, char *prog)
 {
@@ -17,6 +17,7 @@ int check_builtins(char **args, char *prog)
 		{"env", print_env},
 		{"setenv", set_env},
 		{"unsetenv", unset_env},
+		{"cd", cd_dir},
 		{NULL, NULL}
 	};
 
