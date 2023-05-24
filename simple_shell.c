@@ -20,7 +20,7 @@ int main(int ac, char **argv)
 	while (atty && ac)
 	{
 		user_prompt(&atty);
-		input_byte = getline(&buffer, &buffer_size, stdin);
+		input_byte = get_line(&buffer, &buffer_size, stdin);
 		if (input_byte == -1)
 			getline_fail(environ, buffer);
 		buffer[input_byte - 1] = '\0';
@@ -61,7 +61,7 @@ void signal_handler(int signal)
 
 /**
  *getline_fail - handles getline failure
- *@environ: environ variable
+ *@env: environ variable
  *@buf: buffer variable
  *Return: void
  */

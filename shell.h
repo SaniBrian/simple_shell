@@ -8,10 +8,18 @@
 #include <sys/wait.h>
 #include <errno.h>
 
+
+#define BUFSIZE 1024
+
 /**ENVIRONMENT VARIABLE*/
 extern char **environ;
 
+
 /**FUNCTION PROTOTYPES*/
+void bring_line(char **lineptr, size_t *n, char *buffer, size_t j);
+ssize_t get_line(char **lineptr, size_t *n, FILE *stream);
+void _memcpy(void *newptr, const void *ptr, unsigned int size);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char *_strtok(char *string, char *dlm);
 void user_prompt(int *atty);
 void execute(char *cp, char **args, char *prog);
@@ -63,9 +71,9 @@ typedef struct builtins
 /**ENV FLAG STRUCT*/
 /**
 *struct Env - env global flag struct
-*@flag: flag
 *@p_count: program count
 *@p_name: program name
+*@flag: flag
 */
 struct Env
 {
