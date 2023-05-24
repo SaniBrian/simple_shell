@@ -64,6 +64,8 @@ typedef struct builtins
 /**
 *struct Env - env global flag struct
 *@flag: flag
+*@p_count: program count
+*@p_name: program name
 */
 struct Env
 {

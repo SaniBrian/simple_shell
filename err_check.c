@@ -3,7 +3,7 @@
 /**
  *err_check - handles chdir error
  *@err: error code
- *@exec_name: name of exec
+ *@args: args
  *Return: void
  */
 
@@ -70,7 +70,6 @@ void cd_err_2(int err_no, char *e_msg, char **args)
 	free(p_count_str);
 	free(message);
 	message = NULL;
-	return;
 }
 
 /**
@@ -108,5 +107,4 @@ void cd_err(int err_no, char *e_msg, char **args)
 	free(p_count_str);
 	free(message);
 	message = NULL;
-	return;
 }
