@@ -30,8 +30,12 @@ void exit_0(char **args, char *prog)
 		}
 		e_status = _atoi(args[1]);
 		ffree(args);
+		if (env.flag)
+			ffree(environ);
 		exit(e_status);
 	}
 	ffree(args);
+	if (env.flag)
+		ffree(environ);
 	exit(0);
 }
