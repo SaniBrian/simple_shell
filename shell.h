@@ -53,6 +53,7 @@ char *_itoa(int num);
 int int_len(int num);
 int cd_slash(char **args, char *pwd);
 void getline_fail(char **env, char *buf);
+void cd_illegal(int err_no, char *e_msg, char **args);
 
 /**BUILT_INS STRUCT*/
 /**
